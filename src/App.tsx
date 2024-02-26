@@ -7,8 +7,8 @@ import {
 import HomePage from './pages/Home.tsx';
 import ProductPage from './pages/Product.tsx';
 import PricingPage from './pages/Pricing.tsx';
-import NavigationPage from './pages/Navigation.tsx';
 import Login from './pages/Login.tsx';
+import AppLayoutPage from './pages/AppLayout.tsx';
 
 const routeDefinitions = createRoutesFromElements(
   <Route>
@@ -16,7 +16,7 @@ const routeDefinitions = createRoutesFromElements(
     <Route path='product' element={<ProductPage />} />
     <Route path='pricing' element={<PricingPage />} />
     <Route path='login' element={<Login />} />
-    <Route path='app' element={<NavigationPage />} />
+    <Route path='app' element={<AppLayoutPage />} />
   </Route>
 );
 
