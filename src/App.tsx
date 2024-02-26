@@ -1,16 +1,18 @@
+import { useEffect, useState } from 'react';
 import {
   Route,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
+
 import HomePage from './pages/Home.tsx';
 import ProductPage from './pages/Product.tsx';
 import PricingPage from './pages/Pricing.tsx';
 import Login from './pages/Login.tsx';
 import AppLayoutPage from './pages/AppLayout.tsx';
 import CityList from './components/city/CityList.tsx';
-import { useEffect, useState } from 'react';
+import CountryList from './components/country/CountryList.tsx';
 
 // Define types for the city data
 interface Position {
@@ -54,6 +56,8 @@ function App() {
     fetchCities();
   }, []);
 
+  console.log(Array.from(new Set(cities.map((city: City) => city.country))));
+
   const routeDefinitions = createRoutesFromElements(
     <Route>
       <Route index element={<HomePage />} />
@@ -69,7 +73,10 @@ function App() {
           path='cities'
           element={<CityList cities={cities} isLoading={isLoading} />}
         />
-        <Route path='countries' element={<p>List of countries</p>} />
+        <Route
+          path='countries'
+          element={<CountryList cities={cities} isLoading={isLoading} />}
+        />
         <Route path='form' element={<p>Form</p>} />
       </Route>
     </Route>
