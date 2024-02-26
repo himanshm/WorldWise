@@ -14,6 +14,7 @@ import AppLayoutPage from './pages/AppLayout.tsx';
 import CityList from './components/city/CityList.tsx';
 import CountryList from './components/country/CountryList.tsx';
 import City from './components/city/City.tsx';
+import Form from './components/Form.tsx';
 
 // Define types for the city data
 interface Position {
@@ -77,7 +78,7 @@ function App() {
           path='countries'
           element={<CountryList cities={cities} isLoading={isLoading} />}
         />
-        <Route path='form' element={<p>Form</p>} />
+        <Route path='form' element={<Form />} />
       </Route>
     </Route>
   );
