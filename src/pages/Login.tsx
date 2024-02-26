@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import styles from './Login.module.css';
-import MainNavigation from '../components/MainNavigation';
+import MainNavigation from '../components/layout/MainNavigation';
 
 function Login() {
   const [email, setEmail] = useState('jack@example.com');

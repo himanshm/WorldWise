@@ -1,7 +1,7 @@
 import styles from './Product.module.css';
 
 import secondImage from '../assets/img-2.jpg';
-import MainNavigation from '../components/MainNavigation';
+import MainNavigation from '../components/layout/MainNavigation';
 
 function PricingPage() {
   return (

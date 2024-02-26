@@ -1,6 +1,6 @@
 import styles from './Product.module.css';
 import firstImage from '../assets/img-1.jpg';
-import MainNavigation from '../components/MainNavigation';
+import MainNavigation from '../components/layout/MainNavigation';
 
 function ProductPage() {
   return (

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
-import MainNavigation from '../components/MainNavigation';
+import MainNavigation from '../components/layout/MainNavigation';
 
 function HomePage() {
   return (
