@@ -13,6 +13,7 @@ import Login from './pages/Login.tsx';
 import AppLayoutPage from './pages/AppLayout.tsx';
 import CityList from './components/city/CityList.tsx';
 import CountryList from './components/country/CountryList.tsx';
+import City from './components/city/City.tsx';
 
 // Define types for the city data
 interface Position {
@@ -20,8 +21,8 @@ interface Position {
   lng: number;
 }
 
-export interface City {
-  id: string;
+export interface CityType {
+  id: number;
   cityName: string;
   country: string;
   emoji: string;
@@ -31,7 +32,7 @@ export interface City {
 }
 
 // Define type for the state
-export type CitiesState = City[];
+export type CitiesState = CityType[];
 
 const BASE_URL = `http://localhost:8080`;
 
@@ -56,8 +57,6 @@ function App() {
     fetchCities();
   }, []);
 
-  console.log(Array.from(new Set(cities.map((city: City) => city.country))));
-
   const routeDefinitions = createRoutesFromElements(
     <Route>
       <Route index element={<HomePage />} />
@@ -73,6 +72,7 @@ function App() {
           path='cities'
           element={<CityList cities={cities} isLoading={isLoading} />}
         />
+        <Route path='cities/:id' element={<City />} />
         <Route
           path='countries'
           element={<CountryList cities={cities} isLoading={isLoading} />}

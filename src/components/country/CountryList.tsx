@@ -3,7 +3,7 @@ import Spinner from '../UI/Spinner.tsx';
 import CountryItem from './CountryItem.tsx';
 import Message from '../Message.tsx';
 
-import { type CitiesState, type City } from '../../App.tsx';
+import { type CitiesState, type CityType } from '../../App.tsx';
 
 type CountryListProps = {
   cities: CitiesState;
@@ -12,20 +12,18 @@ type CountryListProps = {
 
 function CountryList({ cities, isLoading }: CountryListProps) {
   const uniqueCountries: string[] = Array.from(
-    new Set(cities.map((city: City) => city.country))
+    new Set(cities.map((city: CityType) => city.country))
   );
 
-  const countries: { country: string; emoji: string; id: string | null }[] =
+  const countries: { country: string; emoji: string; id: number | null }[] =
     uniqueCountries.map((countryName: string) => {
-      const city = cities.find((c: City) => c.country === countryName);
-      console.log(city);
+      const city = cities.find((c: CityType) => c.country === countryName);
       return {
         country: countryName,
         emoji: city ? city.emoji : '',
         id: city ? city.id : null,
       };
     });
-  console.log(countries);
 
   if (isLoading) return <Spinner />;
 
