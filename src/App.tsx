@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
+  Navigate,
   Route,
   RouterProvider,
   createBrowserRouter,
@@ -65,10 +66,7 @@ function App() {
       <Route path='pricing' element={<PricingPage />} />
       <Route path='login' element={<Login />} />
       <Route path='app' element={<AppLayoutPage />}>
-        <Route
-          index
-          element={<CityList cities={cities} isLoading={isLoading} />}
-        />
+        <Route index element={<Navigate to='cities' replace />} />
         <Route
           path='cities'
           element={<CityList cities={cities} isLoading={isLoading} />}
