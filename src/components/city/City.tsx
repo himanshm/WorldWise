@@ -1,7 +1,7 @@
 // import styles from './City.module.css';
 // import { type CityType } from '../../App';
 
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 // const formatDate = (date: string) =>
 //   new Intl.DateTimeFormat('en', {
@@ -13,6 +13,11 @@ import { useParams } from 'react-router-dom';
 
 function City() {
   const { id } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const lat = searchParams.get('lat');
+  const lng = searchParams.get('lng');
+
   // const currentCity: CityType = {
   //   cityName: 'Bengaluru',
   //   country: 'India',
@@ -28,7 +33,14 @@ function City() {
 
   // const { cityName, emoji, date, notes } = currentCity;
 
-  return <h1>City{id}</h1>;
+  return (
+    <>
+      <h1>City{id}</h1>
+      <h1>
+        Positon: {lat}, {lng}
+      </h1>
+    </>
+  );
 
   // return (
   //   <div className={styles.city}>
