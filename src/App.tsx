@@ -4,16 +4,19 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import RootLayout from './pages/Root.tsx';
 import HomePage from './pages/Home.tsx';
 import ProductPage from './pages/Product.tsx';
 import PricingPage from './pages/Pricing.tsx';
+import NavigationPage from './pages/Navigation.tsx';
+import Login from './pages/Login.tsx';
 
 const routeDefinitions = createRoutesFromElements(
-  <Route path='/' element={<RootLayout />}>
+  <Route>
     <Route index element={<HomePage />} />
     <Route path='product' element={<ProductPage />} />
     <Route path='pricing' element={<PricingPage />} />
+    <Route path='login' element={<Login />} />
+    <Route path='app' element={<NavigationPage />} />
   </Route>
 );
 

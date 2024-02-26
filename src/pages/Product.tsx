@@ -1,9 +1,12 @@
 import styles from './Product.module.css';
 import firstImage from '../assets/img-1.jpg';
+import MainNavigation from '../components/MainNavigation';
 
 function ProductPage() {
   return (
     <main className={styles.product}>
+      <MainNavigation />
+
       <section>
         <img
           src={firstImage}

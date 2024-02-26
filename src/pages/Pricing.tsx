@@ -1,10 +1,13 @@
 import styles from './Product.module.css';
 
 import secondImage from '../assets/img-2.jpg';
+import MainNavigation from '../components/MainNavigation';
 
 function PricingPage() {
   return (
     <main className={styles.product}>
+      <MainNavigation />
+
       <section>
         <div>
           <h2>

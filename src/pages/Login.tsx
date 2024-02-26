@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import styles from './Login.module.css';
+import MainNavigation from '../components/MainNavigation';
 
 function Login() {
   const [email, setEmail] = useState('jack@example.com');
@@ -8,6 +9,8 @@ function Login() {
 
   return (
     <main className={styles.login}>
+      <MainNavigation />
+
       <form className={styles.form}>
         <div className={styles.row}>
           <label htmlFor='email'>Email address</label>
