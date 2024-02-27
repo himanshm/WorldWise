@@ -13,18 +13,6 @@
       "id": "36417395"
     },
     {
-      "cityName": "Puttaparthi",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": "14.17381943132859",
-        "lng": "77.8083222058708"
-      },
-      "id": "85970818"
-    },
-    {
       "cityName": "New York",
       "country": "USA",
       "emoji": "🇺🇸",
@@ -37,18 +25,6 @@
       "id": "74135263"
     },
     {
-      "cityName": "Los Angeles",
-      "country": "USA",
-      "emoji": "🇺🇸",
-      "date": "2032-10-08T21:33:55.789Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": "34.0587307327263",
-        "lng": "-118.27582068286281"
-      },
-      "id": "19483259"
-    },
-    {
       "cityName": "Adelaide",
       "country": "Australia",
       "emoji": "🇦🇺",
@@ -59,115 +35,6 @@
         "lng": "138.58914824606347"
       },
       "id": "24755868"
-    },
-    {
-      "cityName": "Sydney",
-      "country": "Australia",
-      "emoji": "🇦🇺",
-      "date": "2029-09-28T08:10:33.456Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": "-33.870371947638475",
-        "lng": "151.20318983367233"
-      },
-      "id": "75286874"
-    },
-    {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2024-03-17T15:42:59.123Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": "38.727881642324164",
-        "lng": "-9.140900099907554"
-      },
-      "id": "73930385"
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-04-05T12:55:18.234Z",
-      "notes": "",
-      "position": {
-        "lat": "40.46635901755316",
-        "lng": "-3.7133789062500004"
-      },
-      "id": "17806751"
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2033-01-01T00:00:00.000Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": "52.53586782505711",
-        "lng": "13.376933665713324"
-      },
-      "id": "98443197"
-    },
-    {
-      "cityName": "Barcelona",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2030-02-18T04:20:33.123Z",
-      "notes": "",
-      "position": {
-        "lat": "41.38635744222116",
-        "lng": "2.1786412498238494"
-      },
-      "id": "11649417"
-    },
-    {
-      "cityName": "Dublin",
-      "country": "Ireland",
-      "emoji": "🇮🇪",
-      "date": "2030-02-18T04:20:33.123Z",
-      "notes": "",
-      "position": {
-        "lat": "53.34889201385064",
-        "lng": "-6.2625289614152075"
-      },
-      "id": "56436232"
-    },
-
-    {
-      "cityName": "London",
-      "country": "United Kingdom",
-      "emoji": "🇬🇧",
-      "date": "2030-02-18T04:20:33.123Z",
-      "notes": "",
-      "position": {
-        "lat": "51.505025293515146",
-        "lng": "-0.12769957847197042"
-      },
-      "id": "14671951"
-    },
-    {
-      "cityName": "Birmingham",
-      "country": "United Kingdom",
-      "emoji": "🇬🇧",
-      "date": "2030-02-18T04:20:33.123Z",
-      "notes": "",
-      "position": {
-        "lat": "52.530012969999596",
-        "lng": "-1.9084498578543931"
-      },
-      "id": "59685759"
-    },
-    {
-      "cityName": "Munich",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2029-12-25T06:48:59.890Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": "48.27799195716401",
-        "lng": "11.499191423748986"
-      },
-      "id": "98640124"
     }
   ]
 }

@@ -5,5 +5,5 @@ export type optionsObject = {
   weekday?: 'long' | 'short' | 'narrow';
 };
 
-export const formatDate = (date: string, options?: optionsObject) =>
+export const formatDate = (date: string | Date, options?: optionsObject) =>
   new Intl.DateTimeFormat('en', options).format(new Date(date));
