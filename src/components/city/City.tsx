@@ -1,7 +1,7 @@
 // import styles from './City.module.css';
 // import { type CityType } from '../../App';
 
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // const formatDate = (date: string) =>
 //   new Intl.DateTimeFormat('en', {
@@ -13,10 +13,7 @@ import { useParams, useSearchParams } from 'react-router-dom';
 
 function City() {
   const { id } = useParams();
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const lat = searchParams.get('lat');
-  const lng = searchParams.get('lng');
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   // const currentCity: CityType = {
   //   cityName: 'Bengaluru',
@@ -36,9 +33,7 @@ function City() {
   return (
     <>
       <h1>City{id}</h1>
-      <h1>
-        Positon: {lat}, {lng}
-      </h1>
+      <h1></h1>
     </>
   );
 
