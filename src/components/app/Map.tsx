@@ -12,6 +12,8 @@ import styles from './Map.module.css';
 import { CityType } from '../../contexts/CitiesContext';
 import { useEffect, useState } from 'react';
 import { useCitiesContext } from '../../contexts/useCitiesContext';
+import { useGeolocation } from '../../hooks/useGeolocation';
+import Button from '../UI/Button';
 
 type Position = [lat: number, lng: number];
 
@@ -21,7 +23,6 @@ type ChangeCenterTypes = {
 
 function ChangeCenter({ position }: ChangeCenterTypes) {
   const map = useMap();
-  // const { lat, lng } = position;
   const newPosition: LatLngExpression = position;
   map.setView(newPosition);
 
@@ -43,19 +44,32 @@ function Map() {
   const { cities } = useCitiesContext();
   const [mapPosition, setMapPosition] = useState<Position>([40, 0]);
   const [searchParams] = useSearchParams();
+  const {
+    isLoading: isLoadingPosition,
+    position: geolocationPosition,
+    getPosition,
+  } = useGeolocation();
 
   const mapLat = searchParams.get('lat');
   const mapLng = searchParams.get('lng');
-
-  // const centerLat = mapLat && parseFloat(mapLat);
-  // const centerLng = mapLng && parseFloat(mapLng);
 
   useEffect(() => {
     if (mapLat && mapLng) setMapPosition([+mapLat, +mapLng]);
   }, [mapLat, mapLng]);
 
+  // Synchronize geoLocationPositon with setMapPosition
+  useEffect(() => {
+    if (geolocationPosition)
+      setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+  }, [geolocationPosition]);
+
   return (
     <div className={styles.mapContainer}>
+      {!geolocationPosition && (
+        <Button btntype='position' onClick={getPosition}>
+          {isLoadingPosition ? 'Loading ...' : 'Use your Position'}
+        </Button>
+      )}
       <MapContainer
         className={styles.map}
         center={mapPosition}
