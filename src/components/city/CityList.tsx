@@ -1,15 +1,12 @@
 import styles from './CityList.module.css';
-import { type CitiesState } from '../../App.tsx';
 import Spinner from '../UI/Spinner.tsx';
 import CityItem from './CityItem.tsx';
 import Message from '../Message.tsx';
+import { useCitiesContext } from '../../contexts/useCitiesContext.ts';
 
-type CityListProps = {
-  cities: CitiesState;
-  isLoading: boolean;
-};
+function CityList() {
+  const { isLoading, cities } = useCitiesContext();
 
-function CityList({ cities, isLoading }: CityListProps) {
   if (isLoading) return <Spinner />;
 
   if (!cities.length)

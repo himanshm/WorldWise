@@ -2,15 +2,11 @@ import styles from './CountryList.module.css';
 import Spinner from '../UI/Spinner.tsx';
 import CountryItem from './CountryItem.tsx';
 import Message from '../Message.tsx';
+import { useCitiesContext } from '../../contexts/useCitiesContext.ts';
+import { CityType } from '../../contexts/CitiesContext.tsx';
 
-import { type CitiesState, type CityType } from '../../App.tsx';
-
-type CountryListProps = {
-  cities: CitiesState;
-  isLoading: boolean;
-};
-
-function CountryList({ cities, isLoading }: CountryListProps) {
+function CountryList() {
+  const { cities, isLoading } = useCitiesContext();
   const uniqueCountries: string[] = Array.from(
     new Set(cities.map((city: CityType) => city.country))
   );

@@ -15,7 +15,7 @@ import CityList from './components/city/CityList.tsx';
 import CountryList from './components/country/CountryList.tsx';
 import City from './components/city/City.tsx';
 import Form from './components/Form.tsx';
-import { CitiesContextProvider } from './contexts/CitiesContext.tsx';
+import CitiesContextProvider from './contexts/CitiesContext.tsx';
 
 function App() {
   const routeDefinitions = createRoutesFromElements(

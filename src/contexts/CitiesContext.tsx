@@ -60,4 +60,4 @@ function CitiesContextProvider({ children }: CitiesContextProviderProps) {
   );
 }
 
-export { CitiesContextProvider };
+export default CitiesContextProvider;
