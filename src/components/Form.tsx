@@ -1,15 +1,13 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import styles from './Form.module.css';
 import Button from './UI/Button';
+import BackButton from './UI/BackButton';
 
 function Form() {
   const [cityName, setCityName] = useState<string>('');
   const [date, setDate] = useState<string>('');
   const [notes, setNotes] = useState<string>('');
-
-  const navigate = useNavigate();
 
   const handleCityNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setCityName(e.target.value);
@@ -53,9 +51,7 @@ function Form() {
 
       <div className={styles.buttons}>
         <Button btntype='primary'>Add</Button>
-        <Button btntype='back' onClick={() => navigate(-1)}>
-          &larr; Back
-        </Button>
+        <BackButton />
       </div>
     </form>
   );

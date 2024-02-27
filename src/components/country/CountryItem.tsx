@@ -3,7 +3,7 @@ import styles from './CountryItem.module.css';
 interface Country {
   country: string;
   emoji: string;
-  id: number | null;
+  id: string | null;
 }
 
 type CountryItemProps = {

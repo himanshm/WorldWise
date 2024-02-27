@@ -11,7 +11,7 @@ function CountryList() {
     new Set(cities.map((city: CityType) => city.country))
   );
 
-  const countries: { country: string; emoji: string; id: number | null }[] =
+  const countries: { country: string; emoji: string; id: string | null }[] =
     uniqueCountries.map((countryName: string) => {
       const city = cities.find((c: CityType) => c.country === countryName);
       return {
