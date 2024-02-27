@@ -5,6 +5,26 @@ export function convertToEmoji(countryCode: string) {
   const codePoints = countryCode
     .toUpperCase()
     .split('')
-    .map((char) => 127365 + char.charCodeAt(0) - 65); // Offset calculation
+    .map((char) => 127397 + char.charCodeAt());
   return String.fromCodePoint(...codePoints);
+}
+
+// This function takes a country code as input and returns the corresponding flag emoji.
+export function getFlagEmoji(countryCode: string): string {
+  // First, we need to convert the country code to uppercase.
+  countryCode = countryCode.toUpperCase();
+
+  // Next, we need to split the country code into two characters.
+  const countryCodeChars = countryCode.split('');
+
+  // Now, we need to convert each character to its corresponding Unicode code point.
+  const unicodeCodePoints = countryCodeChars.map((char) => char.charCodeAt(0));
+
+  // Finally, we need to add 127397 to each Unicode code point to get the corresponding flag emoji.
+  const flagEmojis = unicodeCodePoints.map((codePoint) =>
+    String.fromCodePoint(codePoint + 127397)
+  );
+
+  // We return the flag emojis joined together as a single string.
+  return flagEmojis.join('');
 }

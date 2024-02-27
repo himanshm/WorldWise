@@ -14,7 +14,7 @@ import AppLayoutPage from './pages/AppLayout.tsx';
 import CityList from './components/city/CityList.tsx';
 import CountryList from './components/country/CountryList.tsx';
 import City from './components/city/City.tsx';
-import Form from './components/Form.tsx';
+import Form from './components/form/Form.tsx';
 import CitiesContextProvider from './contexts/CitiesContext.tsx';
 
 function App() {

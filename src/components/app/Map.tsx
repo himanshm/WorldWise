@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   MapContainer,
   TileLayer,
@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 import { useCitiesContext } from '../../contexts/useCitiesContext';
 import { useGeolocation } from '../../hooks/useGeolocation';
 import Button from '../UI/Button';
+import { useUrlPosition } from '../../hooks/useUrlPosition';
 
 type Position = [lat: number, lng: number];
 
@@ -43,15 +44,13 @@ function DetectClick() {
 function Map() {
   const { cities } = useCitiesContext();
   const [mapPosition, setMapPosition] = useState<Position>([40, 0]);
-  const [searchParams] = useSearchParams();
   const {
     isLoading: isLoadingPosition,
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
 
-  const mapLat = searchParams.get('lat');
-  const mapLng = searchParams.get('lng');
+  const [mapLat, mapLng] = useUrlPosition();
 
   useEffect(() => {
     if (mapLat && mapLng) setMapPosition([+mapLat, +mapLng]);

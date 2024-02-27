@@ -1,7 +1,7 @@
 import styles from './CountryList.module.css';
 import Spinner from '../UI/Spinner.tsx';
 import CountryItem from './CountryItem.tsx';
-import Message from '../Message.tsx';
+import Message from '../UI/Message.tsx';
 import { useCitiesContext } from '../../contexts/useCitiesContext.ts';
 import { CityType } from '../../contexts/CitiesContext.tsx';
 

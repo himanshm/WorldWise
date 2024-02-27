@@ -1,7 +1,7 @@
 import styles from './CityList.module.css';
 import Spinner from '../UI/Spinner.tsx';
 import CityItem from './CityItem.tsx';
-import Message from '../Message.tsx';
+import Message from '../UI/Message.tsx';
 import { useCitiesContext } from '../../contexts/useCitiesContext.ts';
 
 function CityList() {
