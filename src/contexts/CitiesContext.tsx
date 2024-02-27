@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useState, useEffect } from 'react';
 const BASE_URL = `http://localhost:8080`;
 
-interface Position {
+export interface Position {
   lat: number;
   lng: number;
 }
