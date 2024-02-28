@@ -72,6 +72,7 @@ function Form() {
     if (!cityName || !date) return;
 
     const newCity: CityType = {
+      id: '1234569',
       cityName: cityName,
       country: country,
       emoji: emoji,

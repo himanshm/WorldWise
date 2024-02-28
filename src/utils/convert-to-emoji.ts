@@ -1,13 +1,13 @@
 // char.charCodeAt(): This gives you the Unicode code point for a character. For uppercase letters 'A' to 'Z', the code points range from 65 to 90.
 // 127397: This fixed offset is where the regional indicator symbols (used to form flag emojis) start within the Unicode character set.
 
-export function convertToEmoji(countryCode: string) {
-  const codePoints = countryCode
-    .toUpperCase()
-    .split('')
-    .map((char) => 127397 + char.charCodeAt());
-  return String.fromCodePoint(...codePoints);
-}
+// export function convertToEmoji(countryCode: string) {
+//   const codePoints = countryCode
+//     .toUpperCase()
+//     .split('')
+//     .map((char) => 127397 + char.charCodeAt());
+//   return String.fromCodePoint(...codePoints);
+// }
 
 // This function takes a country code as input and returns the corresponding flag emoji.
 export function getFlagEmoji(countryCode: string): string {

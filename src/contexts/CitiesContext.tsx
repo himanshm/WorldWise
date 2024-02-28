@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useEffect, useReducer } from 'react';
+import {
+  ReactNode,
+  createContext,
+  useCallback,
+  useEffect,
+  useReducer,
+} from 'react';
 const BASE_URL = `http://localhost:8080`;
 
 export interface Position {
@@ -16,6 +22,19 @@ export interface CityType {
   position: Position;
 }
 
+const defaultCity: CityType = {
+  cityName: 'Bengaluru',
+  country: 'India',
+  emoji: '🇮🇳',
+  date: '2027-02-12T09:24:11.863Z',
+  notes: 'Amazing 😃',
+  position: {
+    lat: 12.983387414687364,
+    lng: 77.57393525916173,
+  },
+  id: '36417395',
+};
+
 // Define type for the state
 export type CitiesState = {
   cities: CityType[];
@@ -27,7 +46,7 @@ export type CitiesState = {
 const initialState: CitiesState = {
   cities: [],
   isLoading: false,
-  currentCity: {} as CityType,
+  currentCity: defaultCity,
   error: '',
 };
 
@@ -135,20 +154,23 @@ function CitiesContextProvider({ children }: CitiesContextProviderProps) {
     fetchCities();
   }, []);
 
-  async function getCity(id: string) {
-    if (id === currentCity.id) return;
-    dispatch({ type: 'loading' });
-    try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data: CityType = await res.json();
-      dispatch({ type: 'city/loaded', payload: data });
-    } catch {
-      dispatch({
-        type: 'rejected',
-        payload: 'There was an error loading city...',
-      });
-    }
-  }
+  const getCity = useCallback(
+    async function getCity(id: string) {
+      if (id === currentCity.id) return;
+      dispatch({ type: 'loading' });
+      try {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data: CityType = await res.json();
+        dispatch({ type: 'city/loaded', payload: data });
+      } catch {
+        dispatch({
+          type: 'rejected',
+          payload: 'There was an error loading city...',
+        });
+      }
+    },
+    [currentCity]
+  );
 
   async function createCity(newCity: CityType) {
     dispatch({ type: 'loading' });

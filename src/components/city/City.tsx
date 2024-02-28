@@ -15,7 +15,7 @@ function City() {
 
   useEffect(() => {
     if (id) getCity(id); // Passing data from child to parent
-  }, [id]);
+  }, [id, getCity]);
 
   // const { cityName, emoji, date, notes } = currentCity || {};
   const { cityName, emoji, date, notes } = currentCity;

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 type ProtectedRouteProps = {
   children: ReactNode;
 };
-function ProtectedRoute({ children }: ProtectedRouteProps) {
+function ProtectedRoutePage({ children }: ProtectedRouteProps) {
   const { isAuthenticated } = useAuthContext();
   const navigate = useNavigate();
 
@@ -18,4 +18,4 @@ function ProtectedRoute({ children }: ProtectedRouteProps) {
   return children;
 }
 
-export default ProtectedRoute;
+export default ProtectedRoutePage;
