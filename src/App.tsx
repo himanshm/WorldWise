@@ -16,6 +16,8 @@ import CountryList from './components/country/CountryList.tsx';
 import City from './components/city/City.tsx';
 import Form from './components/form/Form.tsx';
 import CitiesContextProvider from './contexts/CitiesContext.tsx';
+import AuthProvider from './contexts/FakeAuthContext.tsx';
+import ProtectedRoute from './pages/ProtectedRoute.tsx';
 
 function App() {
   const routeDefinitions = createRoutesFromElements(
@@ -24,7 +26,14 @@ function App() {
       <Route path='product' element={<ProductPage />} />
       <Route path='pricing' element={<PricingPage />} />
       <Route path='login' element={<Login />} />
-      <Route path='app' element={<AppLayoutPage />}>
+      <Route
+        path='app'
+        element={
+          <ProtectedRoute>
+            <AppLayoutPage />
+          </ProtectedRoute>
+        }
+      >
         <Route index element={<Navigate to='cities' replace />} />
         <Route path='cities' element={<CityList />} />
         <Route path='cities/:id' element={<City />} />
@@ -37,9 +46,11 @@ function App() {
   const router = createBrowserRouter(routeDefinitions);
 
   return (
-    <CitiesContextProvider>
-      <RouterProvider router={router} />
-    </CitiesContextProvider>
+    <AuthProvider>
+      <CitiesContextProvider>
+        <RouterProvider router={router} />
+      </CitiesContextProvider>
+    </AuthProvider>
   );
 }
 
